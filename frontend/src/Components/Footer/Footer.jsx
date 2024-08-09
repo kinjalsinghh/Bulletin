@@ -2,8 +2,20 @@ import { Link } from 'react-router-dom';
 import facebook from '../Assets/facebook.png'
 import twitter from '../Assets/twitter.png'
 import insta from '../Assets/instagram.png'
+import { useNavigate } from 'react-router-dom';
 import './Footer.css'
 function Footer(){
+    const navigate=useNavigate();
+    const subscribe=()=>{
+       const token=localStorage.getItem('auth-token');
+       if(!token){
+           alert("First Login to your account");
+           navigate('/login')
+           window.scroll(0,0);
+       }else{
+        navigate('/subscription')
+       }
+    }
     return(
         <div className="footer">
            <div className="footer-contents">
@@ -43,7 +55,7 @@ function Footer(){
                 </div>
                 <div className="footer-contents-bottom-3">
                     <p className='footer-contents-bottom-3-heading'>Get Our Subscription</p>
-                    <button>Subscribe</button>
+                    <button onClick={subscribe}>Subscribe</button>
                 </div>
              </div>
 
