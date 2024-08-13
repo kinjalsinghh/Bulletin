@@ -5,7 +5,7 @@ function Forgotpass(){
     const [email,setEmail]=useState("");
     const handlecontinue=async ()=>{
         console.log(email)
-        await axios.post('http://localhost:8000/forgotpassword',{email:email})
+        await axios.post('https://bulletin-backend.onrender.com/forgotpassword',{email:email})
         .then((res)=>{
             console.log(res)
             if(res.data.success===true){
