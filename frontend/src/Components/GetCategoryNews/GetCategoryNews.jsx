@@ -13,7 +13,7 @@ function GetCategoryNews(props){
     const data=news.slice(startIndex,lastIndex);
     
     useEffect(()=>{
-        axios.get(`http://localhost:8000/${props.category}`)
+        axios.get(`https://bulletin-backend.onrender.com/${props.category}`)
         .then((res)=>{
             console.log(res)
             if(res.data.success===true){
