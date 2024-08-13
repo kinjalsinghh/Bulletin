@@ -12,7 +12,7 @@ function LoginSignup(){
     const userLogin=async ()=>{
        console.log("Logged In",data)
        let response;
-       await axios.post('http://localhost:8000/login',data)
+       await axios.post('https://bulletin-backend.onrender.com/login',data)
        .then((res)=>{
         response=res.data;
        })
@@ -27,7 +27,7 @@ function LoginSignup(){
     const userSignUp=async ()=>{
        console.log("Signed Up",data)
        let response;
-       await axios.post('http://localhost:8000/signup',data)
+       await axios.post('https://bulletin-backend.onrender.com/signup',data)
        .then((res)=>{
         response=res.data;
        })
