@@ -11,7 +11,7 @@ function GetAll(){
     const startIndex=lastIndex-newsperPage;
     const data=news.slice(startIndex,lastIndex);
     useEffect(()=>{
-        axios.get('http://localhost:8000/all')
+        axios.get('https://bulletin-backend.onrender.com/all')
         .then((res)=>{
             console.log(res)
             if(res.data.success===true){
